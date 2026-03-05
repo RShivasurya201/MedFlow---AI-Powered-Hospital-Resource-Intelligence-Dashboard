@@ -34,7 +34,7 @@ const options = {
   cutout: "70%",
   plugins: {
     legend: {
-      display: false   // 🔥 turn it off
+      display: false   
     }
   }
 };

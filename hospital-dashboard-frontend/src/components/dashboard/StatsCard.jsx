@@ -5,17 +5,16 @@ const StatCard = ({ title, value, percentage, total, icon, circularProgress = fa
     ? percentage 
     : (total && total > 0 ? Math.round((value / total) * 100) : 0);
 
-  // Determine color based on percentage level
-  // For ICU Occupied: higher is worse (red), for Available Beds: higher is better (green)
+
   const getProgressColor = (percent, higherIsBetter) => {
     if (higherIsBetter) {
-      // For Available Beds - higher percentage is better
+
       if (percent >= 60) return "#90e4c1"; // Green for high availability (60%+)
       if (percent >= 40) return "#ffbb00"; // Yellow for medium (40-59%)
       if (percent >= 20) return "#ff8800"; // Orange for low (20-39%)
       return "#ff4444"; // Red for very low (0-19%)
     } else {
-      // For ICU Occupied - higher percentage is worse
+     
       if (percent >= 80) return "#ff4444"; // Red for high (80%+)
       if (percent >= 60) return "#ff8800"; // Orange for medium-high (60-79%)
       if (percent >= 40) return "#ffbb00"; // Yellow for medium (40-59%)

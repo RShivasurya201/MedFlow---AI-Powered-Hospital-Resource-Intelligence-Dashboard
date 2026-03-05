@@ -6,7 +6,7 @@ const fetchAndStoreInflowPrediction = async () => {
   const history = generateMockInflow();
 
   const response = await axios.post(
-    "http://localhost:8000/predict-inflow",
+    `${process.env.ML_SERVICE_URL}/predict-inflow`,
     { history }
   );
 

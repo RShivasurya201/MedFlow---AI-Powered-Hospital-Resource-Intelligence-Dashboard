@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const predictIcuRisk = async (patient) => {
   const response = await axios.post(
-    "http://localhost:8000/predict-icu-risk",
+    `${process.env.ML_SERVICE_URL}/predict-icu-risk`,
     {
       age: patient.age,
       severity_score: patient.severityScore,
