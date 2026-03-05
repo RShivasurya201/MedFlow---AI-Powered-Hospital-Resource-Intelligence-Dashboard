@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
+const app = express();
+
 app.use(cors({
   origin: [
     "http://localhost:5173",
@@ -10,6 +12,8 @@ app.use(cors({
   credentials: true
 }));
 
+app.use(express.json());
+
 const patientRoutes = require("./routes/patientRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
@@ -17,10 +21,6 @@ const alertRoutes = require("./routes/alertRoutes");
 const predictionRoutes = require("./routes/predictionRoutes");
 const authRoutes = require("./routes/authRoutes");
 
-const app = express();
-
-
-app.use(express.json());
 
 app.use("/api/patients", patientRoutes);
 app.use("/api/dashboard", dashboardRoutes);
