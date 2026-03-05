@@ -1,6 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://med-flow-ai-powered-hospital-resour.vercel.app"
+  ],
+  methods: ["GET","POST","PUT","DELETE"],
+  credentials: true
+}));
+
 const patientRoutes = require("./routes/patientRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
@@ -10,12 +19,7 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://med-flow-ai-powered-hospital-resour.vercel.app"
-  ]
-}));
+
 app.use(express.json());
 
 app.use("/api/patients", patientRoutes);
