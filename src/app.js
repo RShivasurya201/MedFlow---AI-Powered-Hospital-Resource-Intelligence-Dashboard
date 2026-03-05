@@ -10,7 +10,12 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://med-flow-ai-powered-hospital-resour.vercel.app"
+  ]
+}));
 app.use(express.json());
 
 app.use("/api/patients", patientRoutes);
