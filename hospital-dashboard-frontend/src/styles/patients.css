@@ -1,0 +1,414 @@
+.patients-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.patients-table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  background: white;
+}
+
+.total-patients{
+  color: #014e56;
+  font-weight: 600;
+}
+
+.patients-table th,
+.patients-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.patients-table th {
+  background: #f5f9f8;
+  color: #014e56;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filters-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: white;
+  padding: 14px;
+  border-radius: 10px;
+  border-left: 4px solid #014e56;
+
+}
+
+.filters-bar input,
+.filters-bar select {
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.filters-bar input:focus,
+.filters-bar select:focus {
+  outline: none;
+  border-color: #014e56;
+}
+
+.clear-btn {
+  background: #014e56;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #013c42;
+}
+
+.patients-table td.no-records {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 1.05rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.primary-button.admit-btn{
+    margin-left: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-left: 4px solid #014e56;
+}
+
+.modal-card input,
+.modal-card select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.page-btn {
+  background: #014e56;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.page-btn:hover{
+  background: #013c42;
+}
+
+.pagination{
+  align-items: center;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background-color: #f4fbfa;
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1200;
+}
+
+.drawer {
+  width: 420px;
+  background: white;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-left: 4px solid #014e56;
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+.drawer-chart {
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.drawer-chart h4 {
+  margin-bottom: 14px;
+  color: #014e56;
+  font-weight: 600;
+}
+.drawer-actions {
+  margin-top: auto;
+}
+
+.danger-btn {
+  width: 100%;
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.danger-btn:hover {
+  background: #e03232;
+}
+
+.drawer {
+  width: 500px; /* increased */
+  background: white;
+  height: 100%;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  border-left: 4px solid #014e56;
+  animation: slideIn 0.25s ease;
+  overflow-y: auto;
+}
+
+.drawer-header h3 {
+  font-size: 1.4rem;
+  color: #014e56;
+  font-weight: 600;
+}
+
+.drawer-header button {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.drawer-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: #777;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #014e56;
+}
+
+.secondary-btn {
+  width: 100%;
+  background: #014e56;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.secondary-btn:hover {
+  background: #013c42;
+}
+
+.update-vitals-card {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fafcfc;
+}
+
+.update-vitals-card h4 {
+  color: #014e56;
+  margin-bottom: 6px;
+}
+
+.update-vitals-card input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.update-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.form-error {
+  font-size: 0.75rem;
+  color: #cc0000;
+  margin-top: -6px;
+}
+
+/* =========================
+   TABLET (≤1024px)
+========================= */
+
+@media (max-width: 1024px) {
+
+  .filters-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .primary-button.admit-btn {
+    position: static;
+    margin-left: auto;
+  }
+
+  .patients-table th,
+  .patients-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .drawer {
+    width: 420px;
+  }
+
+}
+
+/* =========================
+   MOBILE (≤768px)
+========================= */
+
+@media (max-width: 768px) {
+
+  .filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filters-bar input,
+  .filters-bar select,
+  .clear-btn {
+    width: 100%;
+  }
+
+  .primary-button.admit-btn {
+    position: static;
+    width: 100%;
+  }
+
+  /* Table scroll */
+  .patients-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .patients-table th,
+  .patients-table td {
+    font-size: 0.85rem;
+  }
+
+  .drawer {
+    width: 90%;
+  }
+
+}
+
+/* =========================
+   SMALL PHONES (≤480px)
+========================= */
+
+@media (max-width: 480px) {
+
+  .drawer {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .drawer-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .pagination {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+}

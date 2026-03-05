@@ -1,0 +1,273 @@
+/* ================= PAGE LAYOUT ================= */
+
+.resources-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* ================= CARDS ================= */
+
+.resource-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  border-left: 5px solid #014e56;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.resource-card h3 {
+  color: #014e56;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.resource-card h2 {
+  font-size: 2.4rem;
+  color: #014e56;
+  margin-top: 10px;
+}
+
+.resource-card p {
+  margin: 6px 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ================= PROGRESS (RADIAL) ================= */
+
+.progress-wrapper {
+  position: relative;
+  width: 100%;
+  height: 190px;
+}
+
+.progress-label {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: 700;
+  color: #014e56;
+}
+
+/* ================= OXYGEN BAR ================= */
+
+.oxygen-bar-container {
+  width: 100%;
+  height: 18px;
+  background: #e8f1f2;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 16px 0 8px 0;
+}
+
+.oxygen-bar {
+  height: 100%;
+  transition: width 0.4s ease;
+  border-radius: 12px;
+}
+
+/* ================= CONFIG SECTION ================= */
+
+.resource-config {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border-left: 5px solid #014e56;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.resource-config h3 {
+  margin-bottom: 24px;
+  font-size: 1.2rem;
+  color: #014e56;
+}
+
+/* ================= FORM ================= */
+
+.resource-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  align-items: center;
+}
+
+.resource-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-form input:focus {
+  outline: none;
+  border-color: #014e56;
+  box-shadow: 0 0 0 3px rgba(1, 78, 86, 0.1);
+}
+
+.resource-form button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #014e56;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.resource-form button:hover {
+  background: #02656f;
+}
+
+.resource-form button:active {
+  transform: scale(0.97);
+}
+
+/* ================= FORM GROUP ================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #014e56;
+  letter-spacing: 0.3px;
+}
+
+.resource-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background: #f9fbfb;
+}
+
+.resource-form input:focus {
+  outline: none;
+  border-color: #014e56;
+  box-shadow: 0 0 0 3px rgba(1, 78, 86, 0.12);
+  background: white;
+}
+
+.loading-text{
+  /* height: 100%;
+  width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* =========================
+   TABLET (≤1024px)
+========================= */
+
+@media (max-width: 1024px) {
+
+  .resources-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .resource-card {
+    padding: 24px;
+  }
+
+  .resource-config {
+    padding: 24px;
+  }
+
+  .progress-wrapper {
+    height: 170px;
+  }
+
+}
+
+/* =========================
+   MOBILE (≤768px)
+========================= */
+
+@media (max-width: 768px) {
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .resource-card {
+    padding: 20px;
+  }
+
+  .resource-config {
+    padding: 20px;
+  }
+
+  .resource-form {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .progress-wrapper {
+    height: 160px;
+  }
+
+  .resource-card h2 {
+    font-size: 2rem;
+  }
+
+}
+
+/* =========================
+   SMALL PHONES (≤480px)
+========================= */
+
+@media (max-width: 480px) {
+
+  .resource-card {
+    padding: 16px;
+  }
+
+  .resource-config {
+    padding: 16px;
+  }
+
+  .progress-wrapper {
+    height: 140px;
+  }
+
+  .progress-label {
+    font-size: 20px;
+  }
+
+  .resource-card h2 {
+    font-size: 1.8rem;
+  }
+
+}
