@@ -15,8 +15,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.options("*", cors());
-
 app.use(express.json());
 
 const patientRoutes = require("./routes/patientRoutes");
@@ -33,6 +31,6 @@ app.use("/api/resources", resourceRoutes);
 app.use("/api/alerts", alertRoutes);
 app.use("/api/predictions", predictionRoutes);  
 app.use("/api/auth", authRoutes);
-app.use("/api/dashboard", dashboardRoutes);
+
 
 module.exports = app;
