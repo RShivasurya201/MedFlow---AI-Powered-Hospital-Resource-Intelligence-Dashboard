@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config();
 const app = require("./app");
 const connectDB = require("./config/db");
 const { startAlertScheduler } = require("./jobs/alertJob");
