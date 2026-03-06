@@ -5,10 +5,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://med-flow-ai-powered-hospital-resour.vercel.app",
-  "https://med-flow-ai-powered-hospital-resource-intelligence-g141yf7cu.vercel.app"
+  "https://medflow-dashboard.vercel.app"
 ];
-
 app.use(cors({
   origin: allowedOrigins,
   methods: ["GET","POST","PUT","DELETE","OPTIONS"],
